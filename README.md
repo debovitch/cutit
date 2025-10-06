@@ -1,2 +1,2 @@
-# cutit
-Mono repo root of cutit projects
+# Cut it!
+Mono repo root of Cut it! projects
