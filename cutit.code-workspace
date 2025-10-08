@@ -5,6 +5,7 @@
 		}
 	],
 	"settings": {
-		"chat.requireSessionApproval": false
+		"chat.requireSessionApproval": false,
+		"CodeGPT.apiKey": "OpenAI"
 	}
 }

@@ -1,28 +1,44 @@
 {
   "version": "0.2.0",
   "configurations": [
+
     {
-      "name": "Start cutit_backend (Docker)",
+      "name": "Docker up backend",
       "type": "node-terminal",
       "request": "launch",
       "command": "docker compose up --build",
       "cwd": "${workspaceFolder}/cutit_backend"
     },
     {
-      "name": "Stop cutit_backend (Docker)",
+      "name": "Docker down backend",
       "type": "node-terminal",
       "request": "launch",
       "command": "docker compose down",
       "cwd": "${workspaceFolder}/cutit_backend"
     },
     {
-      "name": "Launch cutit_admin development",
+      "name": "Launch backend",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm run start",
+      "cwd": "${workspaceFolder}/cutit_backend",
+      "envFile": "${workspaceFolder}/cutit_backend/.env.development",
+      "env": {
+        "NODE_ENV": "development",
+        // "PORT": "4000",
+        // "FRONT_URL": "http://localhost:3000"
+      }
+    },
+    {
+      "name": "Launch admin",
       "type": "node-terminal",
       "request": "launch",
       "command": "npm run dev",
       "cwd": "${workspaceFolder}/cutit_admin",
+      "envFile": "${workspaceFolder}/cutit_admin/.env.development",
       "env": {
-        "NODE_ENV": "development"
+        "NODE_ENV": "development",
+        "PORT": "3000",
       }
     },
   ]
