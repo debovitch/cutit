@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  backend:
+    build: ./cutit_backend
+    container_name: cutit_backend_dev
+    working_dir: /app
+    volumes:
+      - .:/app                      # Monte tout le monorepo
+      - /app/node_modules           # Préserve node_modules dans le conteneur
+    ports:
+      - "4000:4000"
+    command: sleep infinity
+    env_file:
+      - cutit_backend/.env.development
+    environment:
+      - NODE_ENV=development
